@@ -110,4 +110,5 @@ env.Default(mongoclient)
 
 
 # install
-env.Alias("install", GetOption('prefix'))
+env.Alias("install", env.Install(dir = os.path.join(GetOption('prefix'), 'lib') , source = 'libmongoclient.a'))
+env.Alias("install", env.Install(dir = os.path.join(GetOption('prefix'), 'include') , source = 'src/mongo'))
